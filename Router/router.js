@@ -1,24 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const {
+  getContact,
+  postContact,
+  updateContact,
+  deleteContact,
+} = require("../controllers/contactController");
 
-router.route("/").get((req, res) => {
-    res.status(200).json({ message: "Welcome to the API!" });
-});
+router.route("/").get(getContact).post(postContact);
 
-router.route("/").post((req, res) => {
-    res.status(200).json({ message: "Route has been created" });
-});
-  
-router.route("/:id").put((req, res) => {
-    res.status(200).json({ message: `Update route ${req.params.id}`});
-});
+router.route("/:id").put(updateContact).delete(deleteContact);
 
-router.route("/:id").delete((req, res) => {
-    res.status(200).json({ message: `Delete route at ${req.params.id}`});
-});
-
-  
-  
 // GET /api/books
-module.exports = router;  // Don't forget to add this!
-
+module.exports = router; // Don't forget to add this!
