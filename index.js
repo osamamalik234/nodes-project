@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000;
 
 app.get("/contacts", (req, res) => {
   res.status(200).json({
-    message: "server here bro",
+    message: "This is what i want to know",
   });
 });
 
