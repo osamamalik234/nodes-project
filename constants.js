@@ -1,0 +1,8 @@
+
+exports.constants = {
+  BAD_REQUEST: 400,
+  UNAUTHORIZED_USER: 401,
+  FORBIDDEN_OPERATION: 403,
+  PAGE_NOT_FOUND: 404,
+}
+

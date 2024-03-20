@@ -3,7 +3,18 @@ const getContact = (req, res) => {
 };
 
 const postContact = (req, res) => {
-  res.status(201).json({ message: "contact created" });
+    const { name, email } = req.body;
+
+  // Check if the required properties are present
+  if (name && email) {
+    // Display user information
+    console.log(name, email);
+    res.status(200).send(`Name: ${name}, Email: ${email}`);
+  } else {
+    // Handle missing data
+    res.status(400)
+    throw new Error("All fields are  not available");
+  }
 };
 
 const updateContact = (req, res) => {
